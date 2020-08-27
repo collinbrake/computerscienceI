@@ -1,7 +1,11 @@
 Computer Science I, The University of Akron
+
 Assignment 1-A
+
 Collin Brake
+
 Instructor: Lianghu Tian 
+
 2020-08-27
 
 Error Catalog:
