@@ -12,7 +12,7 @@ const float COUNTY_TAX = .02;
 
 int main()
 {
-    using cout;
+    using std::cout;
     using std::endl;
 
     float purchase = 95.00;
