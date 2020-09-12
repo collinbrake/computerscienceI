@@ -1,3 +1,11 @@
+/*
+  Pgm: ASSGN2-B  Name: Collin Brake
+  Purpose: This program takes 10 whole numbers as user input and
+  outputs their sum, the sum of all entered numbers greater than
+  0, and the sum of all entered numbers less than 0.
+  Copyright 2020 by Collin Brake.
+*/
+
 #include <iostream>
 
 using namespace std;

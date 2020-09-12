@@ -1,3 +1,11 @@
+/*
+  Pgm: ASSGN2-A  Name: Collin Brake
+  Purpose: This program takes as user input any number of assignment
+  scores and calculates the combined points out of a total, the percentage
+  grade, and the letter grade. It outputs these values at the end.
+  Copyright 2020 by Collin Brake.
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -6,6 +14,7 @@ using namespace std;
 
 int main()
 {
+    // Ask for number of exercises.
     int countExercises = 0;
     cout << "How many exercises to input? ";
     cin >> countExercises;
@@ -13,6 +22,8 @@ int main()
     int pointsRecieved = 0, pointsPossible = 0,
         pointsRecievedTotal = 0, pointsPossibleTotal = 0;
 
+    // Ask for points achieved and total points possible for each assignment
+    // and add to respective sums.
     for (uint i = 0; i < countExercises; i++)
     {
         cout << "Score recieved for exercise " << i+1 << ": ";
@@ -24,7 +35,12 @@ int main()
         pointsPossibleTotal += pointsPossible;
     }
 
+
+    // Calculate the student's grade as a percentage.
     double gradePercent = double(pointsRecievedTotal)/pointsPossibleTotal;
+
+
+    // Translate into a letter grade.
     string gradeLetter = "";
     if (gradePercent < 0.6)
     {
