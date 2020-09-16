@@ -1,5 +1,5 @@
 /*
-    COPYRIGHT (C) 2017 Collin Brake (cmb361)
+    COPYRIGHT (C) 2020 Collin Brake (cmb361)
     All rights reserved.
     Computer Science I - Lab 3, Data Validation
     Author: Collin Brake
