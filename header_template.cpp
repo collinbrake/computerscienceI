@@ -1,7 +1,7 @@
 /*
-    COPYRIGHT (C) 2017 Collin Brake (cmb361)
+    COPYRIGHT (C) 2020 Collin Brake (cmb361)
     All rights reserved.
-    <ASSIGNMENT NAME>
+    Computer Science I - <ASSIGNMENT NAME>
     Author: Collin Brake
         cmb361@zips.uakron.edu
     Purpose: <PURPOSE DESCRIPTION>
