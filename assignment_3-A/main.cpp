@@ -17,7 +17,9 @@ using std::cin;
 
 int main()
 {
-    // Take the width and height as user input after prompting
+    // Take the width and height as user input after prompting. Validate
+    // data with a do while loop, and display a message if not correct, before
+    // prompting again.
     int width = 0, height = 0;  // declare variables to hold the integers
     bool loopFlag = true;       // declare Boolean control flag for the loop
     do
