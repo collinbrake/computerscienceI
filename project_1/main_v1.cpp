@@ -39,12 +39,7 @@
 using namespace std;
 
 int main()
-{   
-    // Declare vars to hold scores,  coin state, and the
-    // player's guess as to heads or tails
-    int scorePlayer = 0, scoreComputer = 0, coin = 0;
-    string playerGuess = "";
-
+{
     // Display the starting screen of the game
     cout << "               LET THE\n\n"
         << "   FLIP OF THE COIN REWRITE HISTORY\n\n\n"
@@ -61,28 +56,6 @@ int main()
         << "territories within the Seven Days area\n\n"
         << "You have to predict whether the coin\n"
         << "will come up heads or tails...\n\n";
-    
-    // Prompt the user to input their guess
-    cout << "Now General McClellan\n"
-      << "Do you predict the coin will come out\n"
-      << "heads (H) or tails (T)?\n"
-      << "Choose H or T: ";
-    
-    // Receive the input from the stream
-    cin >> playerGuess;
-
-    // Insert an extra newline after the user hits Return for input
-    cout << endl;
-
-    // Echo back the user's guess input and tell
-    // them to stand by to fight...
-    cout << "You have chosen " << playerGuess << endl
-      << "Stand by to fight, General\n"
-      << "McClellan...\n\n\n";
-
-    // Display a summary of the scores to this point
-    cout << "So far: McClellan " << scorePlayer << " victories,\n"
-      << "Lee " << scoreComputer << "\n\n\n";
 
     // Display the ending screen of the game
     cout << "In the actual Battle at Seven Days,\n"
