@@ -205,23 +205,23 @@ float calculateCircle()
 // postcondition: returns the calculated area
 float calculateRectangle()
 {
-  float width = 0, height = 0;                         // width and height for rectangle
+  float width = 0, length = 0;                         // width and length for rectangle
   bool loopFlag = true;                                // control for validation
   string msgWidth("The width was invalid."),           // invalid messages
     msgLength("The length was invalid.");
   do
   {
     cout << "Enter the rectangle's length: ";
-    cin >> width;
-    loopFlag = validateFloatInput(width, 0, 999999999.99, msgLength); // we put an upper limit here of 999M
+    cin >> length;
+    loopFlag = validateFloatInput(length, 0, 999999999.99, msgLength); // we put an upper limit here of 999M
   } while (loopFlag);
   do
   {
     cout << "Enter the rectangle's width: ";
-    cin >> height;
-    loopFlag = validateFloatInput(height, 0, 999999999.99, msgWidth); // we put an upper limit here of 999M
+    cin >> width;
+    loopFlag = validateFloatInput(width, 0, 999999999.99, msgWidth); // we put an upper limit here of 999M
   } while (loopFlag);
-  return (width * height);
+  return (length * width);
 }
 
 // calculateTriangle finds the area of a rectangle by formula area = height * width * 0.5
