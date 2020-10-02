@@ -46,11 +46,11 @@ Level 2:
     2. Validate radius input
     3. Calculate area = pi * radius^2
 3. Calculate the area of a rectangle
-    1. Get width from the user
-    2. Validate the width
-    3. Get the height from the user
-    4. Validate the height input
-    5. Calculate area = width * height
+    1. Get length from the user
+    2. Validate the length
+    3. Get the width from the user
+    4. Validate the width input
+    5. Calculate area = length * width
 4. Calculate the area of a triangle
     1. Get the width from the user
     2. Validate the width
@@ -115,7 +115,7 @@ int main()
      cout << endl << std::fixed << std::setprecision(2) << "The area from your choice is: "
         << area << endl;
      // This is simply to make the user hit enter after viewing the calculation results
-     // before the menu is displayed again: 
+     // before the menu is displayed again:
      cin.get();
    }
 }
@@ -208,18 +208,18 @@ float calculateRectangle()
   float width = 0, height = 0;                         // width and height for rectangle
   bool loopFlag = true;                                // control for validation
   string msgWidth("The width was invalid."),           // invalid messages
-    msgHeight("The height was invalid.");             
+    msgLength("The length was invalid.");
   do
   {
-    cout << "Enter the rectangle's width: ";
+    cout << "Enter the rectangle's length: ";
     cin >> width;
-    loopFlag = validateFloatInput(width, 0, 999999999.99, msgWidth); // we put an upper limit here of 999M
+    loopFlag = validateFloatInput(width, 0, 999999999.99, msgLength); // we put an upper limit here of 999M
   } while (loopFlag);
   do
   {
-    cout << "Enter the rectangle's height: ";
+    cout << "Enter the rectangle's width: ";
     cin >> height;
-    loopFlag = validateFloatInput(height, 0, 999999999.99, msgHeight); // we put an upper limit here of 999M
+    loopFlag = validateFloatInput(height, 0, 999999999.99, msgWidth); // we put an upper limit here of 999M
   } while (loopFlag);
   return (width * height);
 }
@@ -232,7 +232,7 @@ float calculateTriangle()
   float width = 0, height = 0;                         // width and height for triangle
   bool loopFlag = true;                                // control for validation
   string msgWidth("The width was invalid."),           // invalid messages
-    msgHeight("The height was invalid.");             
+    msgHeight("The height was invalid.");
   do
   {
     cout << "Enter the triangle's width: ";
