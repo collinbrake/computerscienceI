@@ -1,0 +1,59 @@
+// Program id: CSLab05.cpp
+// This is our template for CS Lab 05
+// REFACTORING PRACTICE PROGRAM
+// This program is used for the University of Akron, Department of Computer Science Laboratories
+// Goal: refactor main into functions
+// examine each portion in main and analyze the code for refactoring
+// Next build your function prototype
+// Next build your function by copying and pasting the code from main, into your function
+// repeat until complete
+
+#include<iostream>
+#include <iomanip>
+
+using namespace std; // forgive me for being lazy!
+
+const double TAX_RATE = .05;
+
+int main()
+{
+   char saleType;
+   int number = 0;
+   double price = 0, total = 0, subTotal = 0;
+
+   cout << "Enter price $";
+   cin >> price;
+
+   cout << "Enter number purchased: ";
+   cin >> number;
+
+   cout << "Type W if this is wholesale purchase. \n"
+        << "Type R if this is retail purchase. \n"
+        << "then press return... \n";
+    cin.ignore();
+    cin.get(saleType);
+
+    if ((saleType == 'W') || (saleType == 'w'))
+    {
+        total = price * number;
+    }
+    else if ((saleType == 'R') || (saleType == 'r'))
+    {
+        subTotal = price * number;
+        total = subTotal + subTotal * TAX_RATE;
+    }
+    else
+    {
+        cout << "Error in the input...";
+    }
+
+
+    cout << setprecision(2) << fixed << showpoint << number << " items at $" << price << endl;
+    cout << "Total bill $" << total;
+    if ((saleType == 'R') || (saleType == 'r'))
+    {
+        cout << " includes sales tax.\n";
+    }
+
+    return 0;
+}
