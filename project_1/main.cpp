@@ -79,6 +79,12 @@ int main()
     // Insert an extra newline after the user hits Return for input
     cout << endl;
 
+    // Validate the user input and force a valid guess if invalid
+    if (coin != 'H' && coin != 'T')
+    {
+      coin = 'H';
+    }
+
     // Echo back the user's guess input and tell
     // them to stand by to fight...
     cout << "You have chosen " << playerGuess << endl
