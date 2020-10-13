@@ -31,7 +31,7 @@
    during the Civil War using coin flips.
 
    Author: Collin Brake
-   Version: 1.01,  2020-09-24
+   Version: 1.02,  2020-09-24
 */
 
 #include <iostream>
