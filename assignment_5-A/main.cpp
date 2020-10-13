@@ -40,7 +40,7 @@ int main()
    {
       // Prompt for input, recieve from stream, and validate.
       cout << "Please enter a positive integer"
-           << " (enter a character a-z to quit program): ";
+           << " (enter a non-numerical character to quit program): ";
       cin >> num;
       // we put an upper limit here of 999M and a zero lower limit
       quit = validateInput(num, 0, 999999999, "Program quiting....");
