@@ -18,6 +18,7 @@ int main()
    getline(cin, inFileName);
    cout << "Enter output file name: " << endl;
    getline(cin, outFileName);
+   //string line;
    char ch;
 
    // Treat as binary, convert name to cstring,
@@ -37,7 +38,9 @@ int main()
    }
 
    while (inFile.get(ch)) // Get data and check fail in one statement
+   //while (getline(inFile, line)) // Get data and check fail in one statement
    {
+      //outFile << line << endl;
       outFile.put(ch);
       if (outFile.fail())
       {
