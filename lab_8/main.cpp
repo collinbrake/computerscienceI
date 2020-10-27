@@ -4,7 +4,7 @@
     Computer Science I - Lab 08
     Author: Collin Brake
         cmb361@zips.uakron.edu
-    Purpose: Optimize code with three cases.
+    Purpose: Optimize code  three cases.
 */
 
 // Program id: CSLab08.txt
