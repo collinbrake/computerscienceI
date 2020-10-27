@@ -1,3 +1,13 @@
+/*
+    COPYRIGHT (C) 2020 Collin Brake (cmb361)
+    All rights reserved.
+    Computer Science I - ASSIGNMENT 6-A
+    Author: Collin Brake
+        cmb361@zips.uakron.edu
+    Purpose: Display the contents of a file, line by line. Practice file I/O
+      and object-oriented concepts.
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -28,6 +38,30 @@ int main()
    fname = fetchInput(
        "Enter the name of the file to be\ndisplayed, including extention: ",
        "An invalid file name was entered.");
+
+   // Declare an input file stream and link to user-provided filename
+   ifstream file;
+   file.open(fname);
+
+   string line = "";
+   int i = 0;
+   while (!file.fail() && !file.eof())
+   {
+      // Increment line count and start line with count
+      ++i;
+      getline(file, line);
+      cout << i << ": " << line << endl;
+
+      // Ask for user confirmation to print another 24 lines
+      // Reset line count.
+      if (i >= 24)
+      {
+         char key;
+         cout << "press any key to continue\n";
+         cin.get(key);
+         i = 0;
+      }
+   }
 
    return 0;
 }
