@@ -1,4 +1,5 @@
 .vscode
+*.docx
 *.pdf
 *.~lock*
 *a.out
