@@ -1,0 +1,28 @@
+ CollinsFar 0  0.00 0.00
+ CollinsFar BartSmithFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc JavensFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc JavensFar HarrisonFarm 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc JavensFar HarrisonFarm SetzerFarmsInc 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc JavensFar HarrisonFarm SetzerFarmsInc SetzerFarmsInc 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc JavensFar HarrisonFarm SetzerFarmsInc SetzerFarmsInc PikesPeakFar 0  0.00 0.00
+ CollinsFar BartSmithFarm AllenFarm RiverRunFar BigTopFar BigTopFar BigTopFar MarbleFar FoodForLifeInc FoodForLifeInc JohnsonFarm A1Far A1Far LooneyTunesFar WolfeCreekFar WolfeCreekFar JamesFar WeaverFarm WeaverFarm PoreBoyFarm RutherfordFarmsInc RutherfordFarmsInc JavensFar HarrisonFarm SetzerFarmsInc SetzerFarmsInc PikesPeakFar HollandAreaFarm 0  0.00 0.00
