@@ -1,3 +1,12 @@
+/*
+    COPYRIGHT (C) 2020 Collin Brake (cmb361)
+    All rights reserved.
+    Computer Science I - Assignment 9-A
+    Author: Collin Brake
+        cmb361@zips.uakron.edu
+    Purpose: reverse a C-string using two pointers
+*/
+
 #include <iostream>
 #include <cstring>
 
