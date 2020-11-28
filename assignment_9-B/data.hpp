@@ -15,6 +15,7 @@ using std::unique_ptr;
 
 // copy copies data from an array into a unique pointer
 // pointing to an array.
+//
 // Precondition: an array of int containing the original data.
 //      Also give the size of the array.
 // Postcondition: returns a unique_ptr to an array holding the
@@ -38,16 +39,17 @@ unique_ptr<int[]> copy(int data[], int size)
 
 // shift copies data from one array into another, shifting the
 // elements one position to the right.
-// Precondition: a unique pointer to an array of int to hold
-//      the copied and shifted data, and another unique pointer
-//      to an array of int containing the original data. Also
-//      give the size of the array containing the original data.
-// Postcondition: the first array holds the data from the second
-//      shifted one element to the right. Its size is one larger
-//      than the original array, and the first element is zero.
-void shift(unique_ptr<int[]> shifted, unique_ptr<int[]> data,
-        int size)
+//
+// Precondition: a unique pointer to an array of int containing
+//      the original data. Also give the size of the array.
+// Postcondition: returns an array holding the data from the
+//      provided array, shifted one element to the right. The
+//      returned array's size is one element larger than the
+//      original array, and the first element is zero.
+unique_ptr<int[]> shift(unique_ptr<int[]> &data, int size)
 {
+    unique_ptr<int[]> shifted(new int[size + 1]);
+
     if (size > 1)
     {
         shifted[0] = 0;
@@ -58,7 +60,7 @@ void shift(unique_ptr<int[]> shifted, unique_ptr<int[]> data,
         }
     }
 
-    return;
+    return shifted;
 }
 
 #endif

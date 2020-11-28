@@ -17,11 +17,12 @@ using std::unique_ptr;
 
 // display sends an array of integers to the console, one by
 // one.
+//
 // Precondition: a unique_ptr smart pointer to an array of
 //      integers.
 // Postcondition: the contents of the array displayed on the
 //      screen.
-void display(unique_ptr<int[]> data, int size)
+void display(unique_ptr<int[]> &data, int size)
 {
     for (int i = 0; i < size; ++i)
     {

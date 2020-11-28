@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <memory>
+
 #include "data.hpp"
 #include "display.hpp"
 
@@ -30,8 +31,7 @@ int main()
     display(copied, SIZE);
 
     // shift one element to the right
-    unique_ptr<int[]> shifted(new int[SIZE + 1]);
-    shift(shifted, copied, SIZE);
+    unique_ptr<int[]> shifted = shift(copied, SIZE);
 
     // Display the copy
     display(shifted, SIZE+1);
