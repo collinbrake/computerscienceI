@@ -49,12 +49,12 @@ int main()
 // Postcondition: the C-string is reversed
 void reverse(char *word)
 {
-    char *s = word, *e = word + (strlen(word)-1);
-    while (s < e)
+    char *forward = word, *backward = word + (strlen(word)-1);
+    for (; forward < backward; forward++, backward--)
     {
-        char tmp = *s;
-        *s++ = *e;
-        *e-- = tmp;
+        char tmp = *forward;
+        *forward = *backward;
+        *backward = tmp;
     }
 
     return;
