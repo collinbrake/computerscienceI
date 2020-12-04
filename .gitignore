@@ -3,4 +3,6 @@
 *.pdf
 *.~lock*
 *a.out
+*.xlsx
+*.xls
 test.cpp
