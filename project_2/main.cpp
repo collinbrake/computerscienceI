@@ -8,22 +8,25 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-
+#include <string>
+#include <limits>
+#include <cstdlib>
 
 using std::cout;
 using std::endl;
 using std::cin;
 using std::ifstream;
+using std::string;
 
 const int FLOOR_ARRAY_SIZE = 5;
 const int ROOM_ARRAY_SIZE = 8;
 
-//	Transfers are represented by a ‘T’.
-//	The Check outs are represented by a ‘C’.
-//	Nurse work stations are represented by a ‘W’.
-//	Occupied rooms are represented by an asterisk ‘O’.
-//	A VACANT_INT room is represented by a blank ‘V’.
-//	The utility rooms are represented by an ‘X’.
+//	Transfers are represented by a 'T'
+//	The Check outs are represented by a 'C'
+//	Nurse work stations are represented by a 'W'
+//	Occupied rooms are represented by an asterisk 'O'
+//	A vacant room is represented by a 'V'
+//	The utility rooms are represented by an 'X'
 
 const char VACANT = 'V';
 const char CHECKOUT = 'C';
@@ -43,7 +46,8 @@ Postcondition: the status of each room in the hospital is displayed as
     a matrix with single character codes as defined by the constants
     above.
 */
-void printGrid(const char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE]);
+void printGrid(
+        const char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE]);
 
 /*
 readGrid() reads in the initial grid from Beds.txt file.
@@ -61,36 +65,79 @@ void readGrid(char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE]);
 checkOuts() performs the checkouts
 Precondition: pass the 2D character array that holds the codes for
     the status of each room.
-Postcondition: every check out status ('C') is changed to the VACANT_INT
+Postcondition: every check out status ('C') is changed to the vacant
     status ('V').
 */
 void checkOuts(char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE]);
 
 /*
-transfers() performs the transfers and builds the dynamic array of pointers. It also computes the available number of rooms.
+transfers() performs the transfers and builds the dynamic array of
+pointers. It also computes the available number of rooms.
 Precondition: pass the 2D character array that holds the codes for
     the status of each room.
-Postcondition: returns a 1D array of char pointers TODO!!! finish this comment FIXME
+Postcondition: returns a 1D array of char pointers, and updates
+    the reference variable holding the number of vacant rooms
 */
-char** tranfers(char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE], int &);
+char** transfers(char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE],
+    int &);
 
 /*
 newPatient() perform the new patient adds passing the new patient input
 from the nurse station and passing the dynamic array of vacancies count
 for updating
+Precondition: pass the number of new patients requested, the number
+    of vacancies, and the vacancies array of char pointers.
+Postcondition: a valid number <= number of vacancies is requested,
+    and this number of rooms is filled in the hospital. The number
+    of vacancies is updated.
 */
-void newPatient(int, int &, char **);
+void newPatient(int, int &, char**);
 
 /*
- Pre and Post condition comments go here ... function for the input from the nurse's station. It returns
- the nurse station choice, passes the current vacancies.
+newPatientInput() gets the input from the nurse's station. It returns
+the nurse station choice, passes the current vacancies.
+Precondition: pass the number of vacancies.
+Postcondition: return the requested number of rooms to fill. It will
+    return a negative number if the user entered one as the quit
+    signal.
 */
 int newPatientInput(int);
 
+/*
+fetchInput prompts for, recieves from the input stream, and
+validates int type input.
+Precondition: prompt message and message to display when
+    invalid input received. Upper and lower limits for
+    validation of input.
+Postcondition: returns valid input of type int
+*/
+int fetchInput(string promptMsg, string invalidMsg,
+        int upperLimit, int lowerLimit);
+
+/*
+validateInput() validates the int type input, and prints out
+the provided message if the input is invalid. It ensures that
+the input is within the provided range and is of the correct
+type
+Precondtion: pass the function the user input
+    pass the function a range, rangeLow lowest acceptable
+    pass the function a range, rangeHigh highest acceptable
+    pass the message to display for any user error
+Postcondition: returns false if valid and true if not
+*/
+bool validateInput(int input, int rangeLow, int rangeHigh,
+                   string message);
+
 int main()
 {
-    char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE]
-        ;//= {{INVALID}};
+    char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE];
+
+    cout << std::setw(40) << std::setfill('-') << "\n"
+        << "Welcome to the CS1 Hospital Management Platform! "
+        << "Enter -1 at any point to quit. Press Return to "
+        << "start!\n\n";
+    string holder;
+    getline(cin, holder);
 
     // Populate the grid from the text file and then display
     // the initial room status values to the console
@@ -101,11 +148,10 @@ int main()
     // Perform checkouts and transfers and then display the
     // new grid.
     checkOuts(hospitalFloors);
-    /*
     int numVacancies = 0;
     char** vacancies = transfers(hospitalFloors, numVacancies);
     printGrid(hospitalFloors);
-    cout << "\tCheck outs and Transfers complete\n";
+    cout << "\tCheck outs and Transfers completed\n";
 
     // Accept input from the nurses station until numVacancies == 0
     // or quit signal is recieved.
@@ -119,6 +165,10 @@ int main()
         if (numNewPatients < 0)
         {
             cout << "\t*** More rooms available today ***\n";
+
+            delete vacancies;
+            vacancies = nullptr;
+
             return 0;
         }
 
@@ -127,21 +177,21 @@ int main()
         newPatient(numNewPatients, numVacancies, vacancies);
 
         printGrid(hospitalFloors);
-        cout << "\tNew patient updates completed\n"
+        cout << "\tNew patient updates completed\n";
     }
 
-    */
-
     cout << "\t*** No more rooms available today ***\n";
+
+    delete vacancies;
+    vacancies = nullptr;
+
     return 4;
 }
-
-// FUNCTIONS GO HERE TODO remove
 
 void printGrid(
         const char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE])
 {
-    cout << "\t" << std::setw(20) << std::setfill('-') << "\n";
+    cout << "\t" << std::setw(17) << std::setfill('-') << "\n";
     for (int floor = 0; floor < FLOOR_ARRAY_SIZE; ++floor)
     {
         cout << "\t";
@@ -151,7 +201,7 @@ void printGrid(
         }
         cout << endl;
     }
-    cout << "\t" << std::setw(20) << std::setfill('-') << "\n";
+    cout << "\t" << std::setw(17) << std::setfill('-') << "\n";
     return;
 }
 
@@ -219,5 +269,142 @@ void readGrid(char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE])
 
 void checkOuts(char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE])
 {
+    for (int floor = 0; floor < FLOOR_ARRAY_SIZE; ++floor)
+    {
+        for (int room = 0; room < ROOM_ARRAY_SIZE; ++room)
+        {
+            if (hospitalFloors[floor][room]
+                    == 'C')
+            {
+                hospitalFloors[floor][room]
+                    = 'V';
+            }
+        }
+    }
     return;
+}
+
+
+char** transfers(
+        char hospitalFloors[FLOOR_ARRAY_SIZE][ROOM_ARRAY_SIZE],
+        int &numVacancies)
+{
+
+    numVacancies = 0;
+
+    // Count the number of vacancies. This ref integer is used
+    // outside of the function, and is also used to allocate
+    // the dynamic array of vacancy addresses.
+    for (int floor = 0; floor < FLOOR_ARRAY_SIZE; ++floor)
+    {
+        for (int room = 0; room < ROOM_ARRAY_SIZE; ++room)
+        {
+            if (hospitalFloors[floor][room]
+                    == VACANT)
+            {
+                ++numVacancies;
+            }
+        }
+    }
+
+    // Allocate the vacancies array at the right size
+    char** vacancies = new char*[numVacancies];
+
+    // Fill the vacancies array
+    int i = 0;
+    for (int floor = 0; floor < FLOOR_ARRAY_SIZE; ++floor)
+    {
+        for (int room = 0; room < ROOM_ARRAY_SIZE; ++room)
+        {
+            if (hospitalFloors[floor][room]
+                    == 'V')
+            {
+                vacancies[i] = &hospitalFloors[floor][room];
+                ++i;
+                if (i >= numVacancies)
+                    break;
+            }
+        }
+    }
+
+    // Swap pointers to perform the transfers
+    i = numVacancies-1;
+    for (int floor = 0; floor < FLOOR_ARRAY_SIZE; ++floor)
+    {
+        for (int room = 0; room < ROOM_ARRAY_SIZE; ++room)
+        {
+            if (hospitalFloors[floor][room]
+                    == TRANSFER)
+            {
+                char* temp = *(vacancies+i);
+                char* roomTemp = &hospitalFloors[floor][room];
+                *(roomTemp) = VACANT;
+                **(vacancies+i) = OCCUPIED;
+                *(vacancies+i) = roomTemp;
+                roomTemp = temp;
+
+                --i;
+                if (i <= 0)
+                    break;
+            }
+        }
+    }
+
+    return vacancies;
+}
+
+void newPatient(int numNewPatients, int &numVacancies, char **vacancies)
+{
+    if (numVacancies <= 0)
+    {
+        return;
+    }
+
+    for (int i = 0; i < numNewPatients; ++i)
+    {
+        // Pop vacancies off the end in LIFO order,
+        // decrementing numVacancies.
+        **(vacancies + --numVacancies) = OCCUPIED;
+    }
+
+    return;
+}
+
+int newPatientInput(int numVacancies)
+{
+    return fetchInput(
+        "Please enter the number of new patients, from one up to "
+        + std::to_string(numVacancies) + ": ",
+        "Invalid entry.",
+        numVacancies,
+        -1);
+}
+
+int fetchInput(string promptMsg, string invalidMsg, int upperLimit,
+        int lowerLimit)
+{
+   double input;         // to hold user input
+   bool loopFlag = true; // control for validation
+   do
+   {
+      cout << promptMsg;
+      cin >> input;
+      loopFlag = validateInput(input, lowerLimit, upperLimit,
+              invalidMsg);
+   } while (loopFlag);
+   return input;
+}
+
+
+bool validateInput(int input, int rangeLow, int rangeHigh, string message)
+{
+   bool goodOrNot = false;
+   if ((cin.fail()) || ((input < rangeLow) || (input > rangeHigh)))
+   {
+      cout << message << endl;
+      goodOrNot = true;
+   }
+   cin.clear();
+   cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+   return goodOrNot;
 }
