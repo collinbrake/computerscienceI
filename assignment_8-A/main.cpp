@@ -52,8 +52,8 @@ int main()
     vector<string> words;
     ifstream inFile;
 
-    string fileName = fetchInput("Please give the name of the file to be processed, including extention: ",
-            "Invalid file name.");
+    string fileName = "DATA.txt"; /*fetchInput("Please give the name of the file to be processed, including extention: ",
+            "Invalid file name.");*/
     inFile.open(fileName);
 
     while(getline(inFile, line))
@@ -62,9 +62,9 @@ int main()
         split(line, words);
 
         // Translate each word to Pig Latin
-        for (int i = 0; i < words.size(); ++i)
+        for (string &word : words)
         {
-            words[i] = toPigLatin(words[i]);
+            word = toPigLatin(word);
         }
 
         // Concatenate all the words to form the original
@@ -132,7 +132,7 @@ void split(string &line, vector<string> &words)
     // out spaces and adding words to the vector
     for (char c : line)
     {
-        if (c != ' ')
+        if (!isspace(c))
         {
             word += c;
         }
@@ -162,7 +162,7 @@ string toPigLatin(string word)
     translated = word.substr(1, word.size()-1);
     translated.push_back(word[0]);
     translated.push_back('a');
-    translated.push_back('y');
+    translated += ('y');
 
     return translated;
 }
